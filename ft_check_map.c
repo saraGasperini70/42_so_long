@@ -1,56 +1,25 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_check_map.c                                     :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: sgasperi <sgasperi@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/05/19 13:47:52 by sgasperi          #+#    #+#             */
+/*   Updated: 2023/05/25 12:47:40 by sgasperi         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
 #include "so_long.h"
 
-//Se non é rettangolare
-void ft_form_check(t_program *program)
-{
-    int l;
-    int len;
-    int len2;
-
-    l = 1;
-    len = program->map_width;
-    while (program->map[l])
-	{
-        len2 = ft_strlen(program->map[l]);
-        if (len == len2)
-            l++;
-        else
-            ft_free_alloc(program, 0);
-	}
-}
-
-//Se non é chiusa/circondata da muri
-void ft_walls_check(t_program *program)
-{  
-    int i;
-
-    i = 0;
-    while (i < program->map_height)
-	{
-		if (program->map[i][0] == '1' && program->map[i][program->map_width - 1] == '1')
-			i++;
-		else
-			ft_free_alloc(program, 1);
-	}
-	i = 0;
-	while (i < program->map_width)
-	{
-		if (program->map[0][i] == '1' && program->map[program->map_height - 1][i] == '1')
-			i++;
-		else
-			ft_free_alloc(program, 1);
-	}
-}
-
 //Se la mappa non é un .ber
-void ft_check_ber(char *av)
+void	ft_check_ber(char *av)
 {
-	int l;
+	int	l;
 
-    l = ft_strlen(av);
+	l = ft_strlen(av);
 	if (!(av[l - 1] == 'r' && av[l - 2] == 'e' && av[l - 3] == 'b'
-        && av[l - 4] == '.'))
+			&& av[l - 4] == '.'))
 	{
 		ft_printf("Errore: la mappa deve essere in formato .ber\n");
 		exit(0);
@@ -80,17 +49,15 @@ void	ft_free_alloc(t_program *program, int z)
 }
 
 // Se la mappa non ha tutti gli elementi giusti
-void	ft_check_elements(t_program *program)
+void	ft_check_player(t_program *program)
 {
 	int	i;
 	int	j;
 	int	pla;
-	int	ex;
 
 	i = 0;
 	pla = 0;
-	ex = 0;
-	while  (program->map[i])
+	while (program->map[i])
 	{
 		j = 0;
 		while (program->map[i][j])
@@ -99,15 +66,7 @@ void	ft_check_elements(t_program *program)
 			{
 				pla++;
 				program->player_y = i;
-				program->player_x = j;				
-			}
-			if (program->map[i][j] == 'E')
-			{
-				ex++;
-			}
-			if (program->map[i][j] == 'C')
-			{
-				program->collectibles++;
+				program->player_x = j;
 			}
 			j++;
 		}
@@ -117,9 +76,36 @@ void	ft_check_elements(t_program *program)
 		ft_free_alloc(program, 2);
 }
 
+void	ft_check_player(t_program *program)
+{
+	int	i;
+	int	j;
+	int	pla;
+	int	ex;
+
+	i = 0;
+	pla = 0;
+	ex = 0;
+	while (program->map[i])
+	{
+		j = 0;
+		while (program->map[i][j])
+		{
+			if (program->map[i][j] == 'E')
+				ex++;
+			if (program->map[i][j] == 'C')
+				program->collectibles++;
+			j++;
+		}
+		i++;
+	}
+	if (pla == 0 || ex == 0)
+		ft_free_alloc(program, 2);
+}
+
 void	ft_check_map(t_program *program)
 {
-    ft_form_check(program);
-    ft_walls_check(program);
+	ft_form_check(program);
+	ft_walls_check(program);
 	ft_check_elements(program);
 }

@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_map.c                                           :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: sgasperi <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/05/25 11:38:38 by sgasperi          #+#    #+#             */
+/*   Updated: 2023/05/25 11:49:19 by sgasperi         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "so_long.h"
 
 void	ft_extract_map(char *av, t_program *program)
@@ -5,7 +17,7 @@ void	ft_extract_map(char *av, t_program *program)
 	char	*new_mem;
 	char	*tmp;
 	char	*tmp2;
-	int fd;
+	int		fd;
 
 	fd = open(av, O_RDONLY);
 	new_mem = ft_calloc(1, 1);

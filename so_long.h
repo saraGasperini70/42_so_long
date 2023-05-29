@@ -6,7 +6,7 @@
 /*   By: sgasperi <sgasperi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/15 16:38:00 by sgasperi          #+#    #+#             */
-/*   Updated: 2023/05/17 12:45:40 by sgasperi         ###   ########.fr       */
+/*   Updated: 2023/05/25 12:07:03 by sgasperi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,21 +26,24 @@
 # include <time.h>
 
 //struct
-typedef struct s_player
-{
-	int	pos_x;
-	int	pos_y;
-}	t_player;
-
 typedef struct s_image
 {
 	void	*wall;
 	void	*player1;
-	void	*enemy1;
+	void	*enemy_s;
+	void	*enemy_m;
+	void	*enemy_l;
 	void	*escape;
 	void	*collectible;
 	void	*floor;
 }	t_image;
+
+typedef struct s_enemy
+{
+	int	move1;
+	int	move2;
+	int	move3;
+}t_enemy;
 
 typedef struct s_program
 {
@@ -54,13 +57,16 @@ typedef struct s_program
 	int			map_width;
 	int			moves;
 	int			collectibles;
-	int			tStamp;
+	int			tstamp;
 	int			loop;
 	int			img_size;
 	int			end_result;
+	t_enemy		enemy_short;
+	t_enemy		enemy_medium;
+	t_enemy		enemy_long;
 }	t_program;
 
-enum s_keys
+enum e_keys
 {
 	KEY_UP=13,
 	KEY_DOWN=1,
@@ -69,27 +75,30 @@ enum s_keys
 	KEY_ESC=53,
 };
 
-enum s_tilesize
+enum e_tilesize
 {
 	SIZE_X=64,
 	SIZE_Y=64,
 };
 
 int		ft_exit(t_program *program);
-void 	ft_moveup(t_program *program);
-void 	ft_movedown(t_program *program);
-void 	ft_moveleft(t_program *program);
-void 	ft_moveright(t_program *program);
+void	ft_moveup(t_program *program);
+void	ft_movedown(t_program *program);
+void	ft_moveleft(t_program *program);
+void	ft_moveright(t_program *program);
 void	ft_check_map(t_program *program);
 void	ft_extract_map(char *av, t_program *program);
-void 	ft_form_check(t_program *program);
-void 	ft_walls_check(t_program *program);
-void 	ft_check_ber(char *av);
+void	ft_form_check(t_program *program);
+void	ft_walls_check(t_program *program);
+void	ft_check_ber(char *av);
 void	ft_free_alloc(t_program *program, int z);
 void	ft_draw_map(t_program *program);
 void	ft_draw_images(t_program *program);
-int 	ft_hooked_func(int key, t_program *program);
-int	    ft_timestamp_player(t_program *program);
+int		ft_hooked_func(int key, t_program *program);
+int		ft_timestamp_player(t_program *program);
 void	ft_endgame(t_program *program);
+int		ft_timestamp_enemy_s(t_program *program);
+int		ft_timestamp_enemy_m(t_program *program);
+int		ft_timestamp_enemy_l(t_program *program);
 
 #endif
