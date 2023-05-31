@@ -1,8 +1,6 @@
 NAME = so_long
 
-SRCS = ft_check_map.c \
-	ft_exit.c \
-	ft_keybind.c ft_map.c get_next_line.c  get_next_line_utils.c so_long.c ft_draw_images.c ft_draw_map.c ft_animations.c ft_endgame.c
+SRCS = get_next_line.c  get_next_line_utils.c so_long.c ft_animations.c ft_check_map.c ft_draw_images.c ft_draw_images.c ft_draw_map.c ft_endgame.c ft_enemies.c ft_enemy_move.c ft_exit.c ft_form_check.c ft_keybind.c ft_map.c ft_walls_check.c
 
 LIBFT = ./include/libft/
 PRINTF = ./include/ft_printf/

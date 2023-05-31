@@ -30,9 +30,9 @@ typedef struct s_image
 {
 	void	*wall;
 	void	*player1;
-	void	*enemy_s;
-	void	*enemy_m;
-	void	*enemy_l;
+	void	*enemy_hor;
+	void	*enemy_ver;
+	void	*enemy_fol;
 	void	*escape;
 	void	*collectible;
 	void	*floor;
@@ -61,9 +61,9 @@ typedef struct s_program
 	int			loop;
 	int			img_size;
 	int			end_result;
-	t_enemy		enemy_short;
-	t_enemy		enemy_medium;
-	t_enemy		enemy_long;
+	t_enemy		enemy_hor;
+	t_enemy		enemy_vert;
+	t_enemy		enemy_foll;
 }	t_program;
 
 enum e_keys

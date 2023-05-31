@@ -34,64 +34,46 @@ int	ft_timestamp_player(t_program *program)
 	return (0);
 }
 
-int	ft_timestamp_enemy_s(t_program *program)
+int	ft_timestamp_enemy_hor(t_program *program)
 {
-	if (program->moves == program->enemy_short.move1)
+	if (program->moves == 0)
 	{
-		program->image->enemy_s = mlx_xpm_file_to_image(program->ptr,
-				"./sprites/enemy1.xpm", &program->img_size, &program->img_size);
+		program->image->enemy_hor = mlx_xpm_file_to_image(program->ptr,
+				"./sprites/egg.xpm", &program->img_size, &program->img_size);
 	}
-	else if (program->moves == program->enemy_short.move2)
+	else
 	{
-		program->image->enemy_s = mlx_xpm_file_to_image(program->ptr,
-				"./sprites/enemy2.xpm", &program->img_size, &program->img_size);
-	}
-	if (program->moves == program->enemy_short.move3)
-	{
-		program->image->enemy_s = mlx_xpm_file_to_image(program->ptr,
-				"./sprites/enemy3.xpm", &program->img_size, &program->img_size);
+		ft_animate_enemy_h(program);
 	}
 	ft_draw_map(program);
 	return (0);
 }
 
-int	ft_timestamp_enemy_m(t_program *program)
+int	ft_timestamp_enemy_vert(t_program *program)
 {
-	if (program->moves == program->enemy_medium.move1)
+	if (program->moves == 0)
 	{
-		program->image->enemy_m = mlx_xpm_file_to_image(program->ptr,
-				"./sprites/enemy1.xpm", &program->img_size, &program->img_size);
+		program->image->enemy_vert = mlx_xpm_file_to_image(program->ptr,
+				"./sprites/egg.xpm", &program->img_size, &program->img_size);
 	}
-	else if (program->moves == program->enemy_medium.move2)
+	else
 	{
-		program->image->enemy_m = mlx_xpm_file_to_image(program->ptr,
-				"./sprites/enemy2.xpm", &program->img_size, &program->img_size);
-	}
-	if (program->moves == program->enemy_medium.move3)
-	{
-		program->image->enemy_m = mlx_xpm_file_to_image(program->ptr,
-				"./sprites/enemy3.xpm", &program->img_size, &program->img_size);
+		ft_animate_enemy_v(program);
 	}
 	ft_draw_map(program);
 	return (0);
 }
 
-int	ft_timestamp_enemy_l(t_program *program)
+int	ft_timestamp_enemy_foll(t_program *program)
 {
-	if (program->moves == program->enemy_long.move1)
+	if (program->moves == 0)
 	{
-		program->image->enemy_l = mlx_xpm_file_to_image(program->ptr,
-				"./sprites/enemy1.xpm", &program->img_size, &program->img_size);
+		program->image->enemy_foll = mlx_xpm_file_to_image(program->ptr,
+				"./sprites/egg.xpm", &program->img_size, &program->img_size);
 	}
-	else if (program->moves == program->enemy_long.move2)
+	else
 	{
-		program->image->enemy_l = mlx_xpm_file_to_image(program->ptr,
-				"./sprites/enemy2.xpm", &program->img_size, &program->img_size);
-	}
-	if (program->moves == program->enemy_long.move3)
-	{
-		program->image->enemy_l = mlx_xpm_file_to_image(program->ptr,
-				"./sprites/enemy3.xpm", &program->img_size, &program->img_size);
+		ft_animate_enemy_f(program);
 	}
 	ft_draw_map(program);
 	return (0);
