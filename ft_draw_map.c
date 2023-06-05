@@ -74,13 +74,19 @@ void	ft_put_image_to_win_plus(t_program *program, int i, int j)
 		mlx_put_image_to_window(program->ptr, program->window,
 			program->image->player1, j * 64, i * 64);
 	}
-	if (program->map[i][j] == 'S')
+	if (program->map[i][j] == 'H')
 		mlx_put_image_to_window(program->ptr, program->window,
-			program->image->enemy_s, j * 64, i * 64);
-	if (program->map[i][j] == 'M')
+			program->image->enemy_hor, j * 64, i * 64);
+			program->enemy_hor.posx = j;
+			program->enemy_hor.posy = i;
+	if (program->map[i][j] == 'V')
 		mlx_put_image_to_window(program->ptr, program->window,
-			program->image->enemy_m, j * 64, i * 64);
-	if (program->map[i][j] == 'L')
+			program->image->enemy_ver j * 64, i * 64);
+			program->enemy_vert.posx = j;
+			program->enemy_vert.posy = i;
+	if (program->map[i][j] == 'F')
 		mlx_put_image_to_window(program->ptr, program->window,
-			program->image->enemy_l, j * 64, i * 64);
+			program->image->enemy_fol, j * 64, i * 64);
+			program->enemy_foll.posy = i;
+			program->enemy_foll.posx = j;
 }

@@ -40,9 +40,9 @@ typedef struct s_image
 
 typedef struct s_enemy
 {
-	int	move1;
-	int	move2;
-	int	move3;
+	int	moves;
+	int posx;
+	int posy;
 }t_enemy;
 
 typedef struct s_program

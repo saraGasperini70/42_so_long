@@ -18,7 +18,7 @@ void	init_program(t_program *program)
 	program->map_width = 0;
 	program->moves = 0;
 	program->loop = 0;
-	program->tStamp = 0;
+	program->tstamp = 0;
 	program->player_y = 0;
 	program->player_x = 0;
 	program->img_size = 64;
