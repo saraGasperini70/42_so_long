@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "so_long.h"
+#include "includes/so_long.h"
 
 //Se la mappa non é un .ber
 void	ft_check_ber(char *av)

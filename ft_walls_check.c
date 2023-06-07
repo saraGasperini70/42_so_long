@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "so_long.h"
+#include "includes/so_long.h"
 
 //Se non é chiusa/circondata da muri
 void	ft_walls_check(t_program *program)

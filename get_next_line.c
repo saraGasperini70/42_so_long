@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "get_next_line.h"
+#include "includes/get_next_line.h"
 
 static char	*function_name(int fd, char *buf, char *bkp)
 {
@@ -62,18 +62,18 @@ char	*get_next_line(int fd)
 {
 	char		*buf;
 	char		*line;
-	static char	*bkp[OPEN_MAX];
+	static char	*bkp;
 
-	if (fd < 0 || BUFFER_SIZE <= 0 || fd >= OPEN_MAX)
+	if (fd < 0 || BUFFER_SIZE <= 0)
 		return (0);
 	buf = (char *)malloc(sizeof(char) * (BUFFER_SIZE + 1));
 	if (!buf)
 		return (0);
-	line = function_name(fd, buf, bkp[fd]);
+	line = function_name(fd, buf, bkp);
 	free(buf);
 	buf = NULL;
 	if (!line)
 		return (NULL);
-	bkp[fd] = extract(line);
+	bkp = extract(line);
 	return (line);
 }

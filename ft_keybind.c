@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "so_long.h"
+#include "includes/so_long.h"
 
 int	ft_hooked_func(int key, t_program *program)
 {
@@ -40,7 +40,6 @@ void	ft_moveup(t_program *program)
 		if (program->map[program->player_y - 1][program->player_x] == 'C')
 			program->collectibles--;
 		program->map[program->player_y - 1][program->player_x] = 'P';
-		ft_printf("%d\n", program->collectibles);
 		program->map[program->player_y][program->player_x] = '0';
 		program->player_y--;
 	}
@@ -61,7 +60,6 @@ void	ft_movedown(t_program *program)
 		if (program->map[program->player_y + 1][program->player_x] == 'C')
 			program->collectibles--;
 		program->map[program->player_y + 1][program->player_x] = 'P';
-		ft_printf("%d\n", program->collectibles);
 		program->map[program->player_y][program->player_x] = '0';
 		program->player_y++;
 	}
@@ -80,7 +78,6 @@ void	ft_moveleft(t_program *program)
 		if (program->map[program->player_y][program->player_x - 1] == 'C')
 			program->collectibles--;
 		program->map[program->player_y][program->player_x - 1] = 'P';
-		ft_printf("%d\n", program->collectibles);
 		program->map[program->player_y][program->player_x] = '0';
 		program->player_x--;
 	}
@@ -102,7 +99,6 @@ void	ft_moveright(t_program *program)
 		if (program->map[program->player_y][program->player_x + 1] == 'C')
 			program->collectibles--;
 		program->map[program->player_y][program->player_x + 1] = 'P';
-		ft_printf("%d\n", program->collectibles);
 		program->map[program->player_y][program->player_x] = '0';
 		program->player_x++;
 	}
