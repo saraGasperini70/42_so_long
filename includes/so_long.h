@@ -17,7 +17,6 @@
 # include <string.h>
 # include <stdlib.h>
 # include <unistd.h>
-# include "libs/mlx/mlx.h"
 # include "includes/get_next_line.h"
 # include "includes/types.h"
 # include "includes/enums.h"
@@ -26,6 +25,7 @@
 # include <math.h>
 # include <fcntl.h>
 # include <time.h>
+# include "libs/mlx/mlx.h"
 
 int		ft_exit(t_program *program);
 void	ft_moveup(t_program *program);

@@ -1,6 +1,6 @@
 NAME = so_long
 
-SRCS = get_next_line.c  get_next_line_utils.c so_long.c ft_animations.c ft_check_map.c ft_draw_images.c ft_draw_images.c ft_draw_map.c ft_endgame.c ft_enemy_move.c ft_exit.c ft_form_check.c ft_keybind.c ft_map.c ft_walls_check.c
+SRCS = get_next_line.c  get_next_line_utils.c so_long.c ft_anim_enemies.c ft_animations.c ft_check_map.c ft_draw_images.c ft_draw_map.c ft_endgame.c ft_enemy_move.c ft_exit.c ft_form_check.c ft_keybind.c ft_map.c ft_walls_check.c
 
 LIBFT = ./include/libft/
 PRINTF = ./include/ft_printf/
@@ -9,7 +9,7 @@ CC = gcc
 
 FLAGS = -Wextra -Wall -Werror -g
 
-LINKS = -lbsd -lmlx lXext -lX11
+LINKS = -Lmlx_linux -lmlx_Linux -L/usr/lib -Imlx_linux -lXext -lX11 -lm -lz
 
 RM = rm -f
 
@@ -20,7 +20,7 @@ INCLUDE = -I${LIBFT} -I${PRINTF}
 LIBS = -L${LIBFT} -lft
 
 %.o:%.c
-	${CC} ${FLAGS} ${INCLUDE} -c $< -o $@
+	${CC} ${FLAGS} ${INCLUDE} -I/usr/include -Imlx_linux -O3 -c $< -o $@
 
 all: ${NAME}
 
