@@ -17,14 +17,14 @@
 # include <string.h>
 # include <stdlib.h>
 # include <unistd.h>
+# include <math.h>
+# include <fcntl.h>
+# include <time.h>
 # include "includes/get_next_line.h"
 # include "includes/types.h"
 # include "includes/enums.h"
 # include "libs/libft/libft.h"
 # include "libs/ft_printf/ft_printf.h"
-# include <math.h>
-# include <fcntl.h>
-# include <time.h>
 # include "libs/mlx/mlx.h"
 
 int		ft_exit(t_program *program);
