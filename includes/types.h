@@ -4,8 +4,8 @@
 //struct
 typedef enum s_bool
 {
-	TRUE=1;
-	FALSE=0
+	TRUE=1,
+	FALSE=0,
 }	t_bool;
 
 typedef struct s_image

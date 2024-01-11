@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sgasperi <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: sgasperi <sgasperi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/24 10:56:15 by sgasperi          #+#    #+#             */
-/*   Updated: 2023/02/17 10:30:54 by sgasperi         ###   ########.fr       */
+/*   Updated: 2024/01/02 13:05:43 by sgasperi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@
 # include <stdlib.h>
 # include <string.h>
 # include <unistd.h>
+# include <stdint.h>
 
 typedef struct s_list
 {

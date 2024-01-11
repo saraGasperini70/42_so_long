@@ -6,7 +6,7 @@
 /*   By: sgasperi <sgasperi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/15 16:38:00 by sgasperi          #+#    #+#             */
-/*   Updated: 2023/05/25 12:07:03 by sgasperi         ###   ########.fr       */
+/*   Updated: 2024/01/04 14:45:49 by sgasperi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,12 +20,12 @@
 # include <math.h>
 # include <fcntl.h>
 # include <time.h>
-# include "includes/get_next_line.h"
-# include "includes/types.h"
-# include "includes/enums.h"
-# include "libs/libft/libft.h"
-# include "libs/ft_printf/ft_printf.h"
-# include "libs/mlx/mlx.h"
+# include "get_next_line.h"
+# include "../includes/types.h"
+# include "../includes/enums.h"
+# include "../libs/libft/libft.h"
+# include "../libs/ft_printf/ft_printf.h"
+# include "../mlx_linux/mlx.h"
 
 int		ft_exit(t_program *program);
 void	ft_moveup(t_program *program);

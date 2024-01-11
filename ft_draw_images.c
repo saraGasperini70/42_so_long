@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_draw_images.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sgasperi <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: sgasperi <sgasperi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/19 14:01:31 by sgasperi          #+#    #+#             */
-/*   Updated: 2023/05/19 14:06:06 by sgasperi         ###   ########.fr       */
+/*   Updated: 2024/01/02 13:01:15 by sgasperi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,12 +22,6 @@ void	ft_draw_images(t_program *program)
 	program->image = ft_calloc(1, sizeof(t_image));
 	program->image->wall = mlx_xpm_file_to_image(program->ptr,
 			"./sprites/wall.xpm", &height, &width);
-	program->image->enemy_s = mlx_xpm_file_to_image(program->ptr,
-			"./sprites/enemy1.xpm", &height, &width);
-	program->image->enemy_m = mlx_xpm_file_to_image(program->ptr,
-			"./sprites/enemy2.xpm", &height, &width);
-	program->image->enemy_l = mlx_xpm_file_to_image(program->ptr,
-			"./sprites/enemy3.xpm", &height, &width);
 	program->image->escape = mlx_xpm_file_to_image(program->ptr,
 			"./sprites/escape.xpm", &height, &width);
 	program->image->collectible = mlx_xpm_file_to_image(program->ptr,

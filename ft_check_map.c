@@ -6,7 +6,7 @@
 /*   By: sgasperi <sgasperi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/19 13:47:52 by sgasperi          #+#    #+#             */
-/*   Updated: 2023/05/25 12:47:40 by sgasperi         ###   ########.fr       */
+/*   Updated: 2024/01/04 12:47:18 by sgasperi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ void	ft_check_ber(char *av)
 	}
 }
 
-//Se errore, libera la memoria e restituisce un messaggio in base all'errore 
+//Se errore, libera la memoria e restituisce un messaggio in base all'errore
 void	ft_free_alloc(t_program *program, int z)
 {
 	int	i;
@@ -72,19 +72,17 @@ void	ft_check_player(t_program *program)
 		}
 	i++;
 	}
-	if (pla == 0 || ex == 0)
+	if (pla == 0 || pla >= 2)
 		ft_free_alloc(program, 2);
 }
 
-void	ft_check_player(t_program *program)
+void	ft_check_elements(t_program *program)
 {
 	int	i;
 	int	j;
-	int	pla;
 	int	ex;
 
 	i = 0;
-	pla = 0;
 	ex = 0;
 	while (program->map[i])
 	{
@@ -99,7 +97,7 @@ void	ft_check_player(t_program *program)
 		}
 		i++;
 	}
-	if (pla == 0 || ex == 0)
+	if (program->collectibles == 0 || ex == 0)
 		ft_free_alloc(program, 2);
 }
 
@@ -107,5 +105,6 @@ void	ft_check_map(t_program *program)
 {
 	ft_form_check(program);
 	ft_walls_check(program);
+	ft_check_player(program);
 	ft_check_elements(program);
 }
