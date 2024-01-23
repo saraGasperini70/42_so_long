@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_keybind.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sgasperi <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: sgasperi <sgasperi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/19 14:18:10 by sgasperi          #+#    #+#             */
-/*   Updated: 2023/05/19 14:30:33 by sgasperi         ###   ########.fr       */
+/*   Updated: 2024/01/23 14:04:05 by sgasperi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,16 +14,17 @@
 
 int	ft_hooked_func(int key, t_program *program)
 {
-	if (key == 53)
+	if (key == 65307)
 		ft_exit(program);
-	else if (key == 13)
+	else if (key == 119)
 		ft_moveup(program);
-	else if (key == 1)
+	else if (key == 115)
 		ft_movedown(program);
-	else if (key == 0)
+	else if (key == 97)
 		ft_moveleft(program);
-	else if (key == 2)
+	else if (key == 100)
 		ft_moveright(program);
+	ft_printf("Moves: %d\n", program->moves);
 	return (0);
 }
 
@@ -90,7 +91,6 @@ void	ft_moveright(t_program *program)
 	if (program->map[program->player_y][program->player_x + 1] == 'E'
 			&& program->collectibles == 0)
 	{
-		ft_printf("%d\n", program->end_result);
 		program->end_result = 1;
 	}
 	if (program->map[program->player_y][program->player_x + 1] == '0'

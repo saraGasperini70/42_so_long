@@ -6,7 +6,7 @@
 /*   By: sgasperi <sgasperi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/25 11:50:19 by sgasperi          #+#    #+#             */
-/*   Updated: 2024/01/04 12:45:36 by sgasperi         ###   ########.fr       */
+/*   Updated: 2024/01/23 13:14:43 by sgasperi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ void	ft_pre_checks(char **av, int ac, t_program *program)
 		ft_check_ber(av[1]);
 		ft_extract_map(av[1], program);
 		ft_check_map(program);
-	}	
+	}
 	else if (ac < 2)
 	{
 		ft_printf("Error: Nessuna mappa inserita");
@@ -53,25 +53,19 @@ void	init_mlx(t_program *x, void *ptr)
 
 int	main(int ac, char **av)
 {
-
 	t_program	program;
+	void		*mlx_ptr;
 
-	void	*mlx_ptr = mlx_init();
-	printf("mlx_ptr: %p\n", mlx_ptr);
+	mlx_ptr = mlx_init();
 	init_program(&program);
 	ft_pre_checks(av, ac, &program);
-	printf("%d, %d\n", program.map_height, program.map_width);
-	// program.ptr = mlx_init();
 	init_mlx(&program, mlx_ptr);
-	printf("%p\n", program.ptr);
 	program.window = mlx_new_window(program.ptr,
 			22 * 64, 9 * 64, "so_long");
-	printf("%d %d\n", program.map_width, program.map_height);
 	ft_draw_images(&program);
 	ft_draw_map(&program);
 	mlx_key_hook(program.window, ft_hooked_func, &program);
 	mlx_hook(program.window, 17, 0, ft_exit, &program);
-	//mlx_loop_hook(program.ptr, ft_timestamp_player, &program);
 	mlx_loop(program.ptr);
 	ft_exit(&program);
 }

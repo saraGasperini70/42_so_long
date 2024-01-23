@@ -1,5 +1,17 @@
-#ifndef SO_LONG_H
-# define SO_LONG_H
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   enums.h                                            :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: sgasperi <sgasperi@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/01/23 13:15:48 by sgasperi          #+#    #+#             */
+/*   Updated: 2024/01/23 13:17:05 by sgasperi         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#ifndef ENUMS_H
+# define ENUMS_H
 
 enum e_keys
 {
@@ -14,13 +26,6 @@ enum e_tilesize
 {
 	SIZE_X=64,
 	SIZE_Y=64,
-};
-
-enum e_enemy_type
-{
-    HORIZONTAL=H,
-    VERTICAL=V,
-    FOLLOWER=F,
 };
 
 #endif

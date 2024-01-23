@@ -6,12 +6,11 @@
 /*   By: sgasperi <sgasperi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/19 14:07:00 by sgasperi          #+#    #+#             */
-/*   Updated: 2024/01/02 13:04:20 by sgasperi         ###   ########.fr       */
+/*   Updated: 2024/01/23 13:51:06 by sgasperi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "includes/so_long.h"
-
 
 void	ft_image_to_win(t_program *program, int i, int j)
 {
@@ -59,7 +58,7 @@ void	ft_draw_map(t_program *program)
 	i = 0;
 	str = ft_itoa(program->moves);
 	if (program->end_result != -1)
-		return ;
+		ft_endgame(program);
 	while (program->map[i])
 	{
 		j = 0;

@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   types.h                                            :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: sgasperi <sgasperi@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/01/23 13:17:37 by sgasperi          #+#    #+#             */
+/*   Updated: 2024/01/23 13:19:02 by sgasperi         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #ifndef TYPES_H
 # define TYPES_H
 
@@ -20,14 +32,6 @@ typedef struct s_image
 	void	*floor;
 }	t_image;
 
-typedef struct s_enemy
-{
-	int	dir;
-    char *en_type;
-	int posx;
-	int posy;
-}t_enemy;
-
 typedef struct s_program
 {
 	void		*ptr;
@@ -44,10 +48,6 @@ typedef struct s_program
 	int			loop;
 	int			img_size;
 	int			end_result;
-	t_enemy		enemy_hor;
-	t_enemy		enemy_vert;
-	t_enemy		enemy_foll;
 }	t_program;
 
 #endif
-

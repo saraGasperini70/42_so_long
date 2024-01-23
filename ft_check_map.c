@@ -6,7 +6,7 @@
 /*   By: sgasperi <sgasperi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/19 13:47:52 by sgasperi          #+#    #+#             */
-/*   Updated: 2024/01/04 12:47:18 by sgasperi         ###   ########.fr       */
+/*   Updated: 2024/01/23 13:11:21 by sgasperi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,7 +70,7 @@ void	ft_check_player(t_program *program)
 			}
 			j++;
 		}
-	i++;
+		i++;
 	}
 	if (pla == 0 || pla >= 2)
 		ft_free_alloc(program, 2);

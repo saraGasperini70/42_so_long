@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_map.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sgasperi <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: sgasperi <sgasperi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/25 11:38:38 by sgasperi          #+#    #+#             */
-/*   Updated: 2023/05/25 11:49:19 by sgasperi         ###   ########.fr       */
+/*   Updated: 2024/01/23 12:30:50 by sgasperi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,11 +18,10 @@ void	ft_extract_map(char *av, t_program *program)
 	char	*tmp;
 	char	*tmp2;
 	int		fd;
-	
+
 	fd = open(av, O_RDONLY);
 	new_mem = ft_calloc(1, 1);
 	tmp = get_next_line(fd);
-	printf("%s\n", tmp);
 	while (tmp != NULL)
 	{
 		tmp2 = new_mem;
@@ -32,10 +31,8 @@ void	ft_extract_map(char *av, t_program *program)
 		tmp = get_next_line(fd);
 		program->map_height++;
 	}
-	printf("Map height: %d\n", program->map_height);
 	free(tmp);
 	program->map = ft_split(new_mem, '\n');
 	free(new_mem);
 	program->map_width = ft_strlen(program->map[0]);
-	printf("Map height: %d\n", program->map_width);	
 }
